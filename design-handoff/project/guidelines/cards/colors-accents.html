@@ -1,0 +1,24 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Brand Accents — Yellow & Green" subtitle="Green = action + display figures. Yellow = accents, surface (black text)." -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin:0; font-family:var(--font-body); background:var(--surface-page); padding:20px; }
+  .row { display:flex; gap:14px; }
+  .sw { flex:1; border-radius:var(--radius-md); height:104px; display:flex; flex-direction:column; justify-content:flex-end; padding:12px; border:1px solid var(--border-default); }
+  .name { font-size:12px; font-weight:700; }
+  .hex { font-size:11px; opacity:.85; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw" style="background:var(--fei-yellow); color:var(--fei-black)"><span class="name">Marken-Gelb</span><span class="hex">#FFE600 · black text only</span></div>
+    <div class="sw" style="background:var(--fei-yellow-deep); color:#fff"><span class="name">Yellow Deep</span><span class="hex">#E0CA00 · border</span></div>
+    <div class="sw" style="background:var(--fei-green); color:#fff"><span class="name">Marken-Grün</span><span class="hex">#16A34A · action</span></div>
+    <div class="sw" style="background:var(--fei-green-700); color:#fff"><span class="name">Green 700</span><span class="hex">#15803D · hover</span></div>
+    <div class="sw" style="background:var(--fei-green-900); color:#fff"><span class="name">Green 900</span><span class="hex">#14532D · deep</span></div>
+  </div>
+</body>
+</html>

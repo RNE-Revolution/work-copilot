@@ -1,0 +1,31 @@
+<!-- @dsCard group="Kampagne" viewport="700x300" name="Kampagne — Gründe & Social-Format" subtitle="Plakat, Flyer, Social only. 1080×1350 (4:5) mit 3:4-Safe-Zone. Nicht fürs Web." -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin:0; font-family:var(--font-body); background:var(--surface-page); padding:20px; display:grid; grid-template-columns:repeat(4,1fr) 1.15fr; gap:12px; height:260px; box-sizing:border-box; }
+  .g { border-radius:var(--radius-lg); background:var(--surface-page); position:relative; overflow:hidden; padding:16px 14px; box-sizing:border-box; display:flex; flex-direction:column; gap:6px; }
+  .g h3 { margin:0; font-family:var(--font-display); font-weight:900; font-style:italic; font-size:22px; line-height:1; letter-spacing:var(--tracking-display); color:var(--text-title); position:relative; z-index:1; }
+  .g .sub { margin:0; font-weight:500; font-style:italic; font-size:11px; color:var(--text-subline); }
+  .g p.b { margin:0; font-size:10px; line-height:1.4; color:var(--text-body); }
+  .g .blitz { position:absolute; left:8px; top:-6px; height:120px; z-index:0; opacity:.9; }
+  .g .bub { position:absolute; right:-6px; bottom:10px; width:66px; height:63px; background:var(--bubble-fill); -webkit-mask:url(../../assets/elements/aufruf-bubble.svg) center/contain no-repeat; mask:url(../../assets/elements/aufruf-bubble.svg) center/contain no-repeat; }
+  .g .bubt { position:absolute; right:2px; bottom:26px; width:56px; text-align:center; font-weight:700; font-style:italic; font-size:9px; line-height:.9; color:var(--bubble-text); }
+  .g .tag { position:absolute; left:12px; bottom:8px; font-size:9px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; color:var(--text-body); opacity:.7; }
+  .g.dark .blitz { filter:none; }
+  .fmt { background:var(--fei-white); border:1px solid var(--border-default); display:flex; align-items:center; justify-content:center; padding:12px; }
+  .canvas { width:108px; height:135px; background:var(--fei-cream-mid); border:1px solid var(--fei-cream-deep); position:relative; }
+  .safe { position:absolute; left:3.4px; right:3.4px; top:8px; bottom:8px; border:1.5px dashed var(--fei-lila); }
+  .lbl { position:absolute; font-size:8px; font-weight:600; color:var(--text-muted); white-space:nowrap; }
+</style>
+</head>
+<body>
+  <div class="g fei-kampagne"><svg class="blitz" viewBox="0 0 241 409"><path d="M144.467 175.643L149.163 174.812L233.003 159.985L90.5928 394.951L88.8193 242.455L88.7617 237.574L83.9873 238.589L7.89062 254.767L144.467 15.0986V175.643Z" fill="none" stroke="var(--blitz-stroke)" stroke-width="8"></path></svg><h3>Strom von nebenan</h3><p class="sub">Infoabend · 12. Oktober</p><p class="b">Fließtext bleibt schwarz.</p><div class="bub"></div><div class="bubt">Jetzt anmelden!</div><span class="tag">cream</span></div>
+  <div class="g fei-kampagne" data-ground="gelb"><svg class="blitz" viewBox="0 0 241 409"><path d="M144.467 175.643L149.163 174.812L233.003 159.985L90.5928 394.951L88.8193 242.455L88.7617 237.574L83.9873 238.589L7.89062 254.767L144.467 15.0986V175.643Z" fill="none" stroke="var(--blitz-stroke)" stroke-width="8"></path></svg><h3>Strom von nebenan</h3><p class="sub">Infoabend · 12. Oktober</p><p class="b">Fließtext bleibt schwarz.</p><div class="bub"></div><div class="bubt">Jetzt anmelden!</div><span class="tag">gelb</span></div>
+  <div class="g fei-kampagne dark" data-ground="violett"><svg class="blitz" viewBox="0 0 241 409"><path d="M144.467 175.643L149.163 174.812L233.003 159.985L90.5928 394.951L88.8193 242.455L88.7617 237.574L83.9873 238.589L7.89062 254.767L144.467 15.0986V175.643Z" fill="none" stroke="var(--blitz-stroke)" stroke-width="8"></path></svg><h3>Strom von nebenan</h3><p class="sub">Infoabend · 12. Oktober</p><p class="b">Fließtext in Cream.</p><div class="bub"></div><div class="bubt">Jetzt anmelden!</div><span class="tag" style="color:#fff">violett</span></div>
+  <div class="g fei-kampagne dark" data-ground="gruen"><svg class="blitz" viewBox="0 0 241 409"><path d="M144.467 175.643L149.163 174.812L233.003 159.985L90.5928 394.951L88.8193 242.455L88.7617 237.574L83.9873 238.589L7.89062 254.767L144.467 15.0986V175.643Z" fill="none" stroke="var(--blitz-stroke)" stroke-width="8"></path></svg><h3>Strom von nebenan</h3><p class="sub">Infoabend · 12. Oktober</p><p class="b">Fließtext in Weiß.</p><div class="bub"></div><div class="bubt">Jetzt anmelden!</div><span class="tag" style="color:#fff">grün</span></div>
+  <div class="fmt"><div class="canvas"><div class="safe"></div><span class="lbl" style="top:-14px;left:0">1080 × 1350 · 4:5</span><span class="lbl" style="bottom:-14px;left:0;color:var(--fei-lila)">3:4 Safe-Zone (Grid)</span></div></div>
+</body>
+</html>

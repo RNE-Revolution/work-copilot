@@ -1,0 +1,24 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Ink & Text" subtitle="Body is always navy or black — never accent colours" -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin:0; font-family:var(--font-body); background:var(--surface-page); padding:20px; }
+  .row { display:flex; gap:14px; }
+  .sw { flex:1; border-radius:var(--radius-md); height:104px; display:flex; flex-direction:column; justify-content:flex-end; padding:12px; border:1px solid var(--border-default); }
+  .name { font-size:12px; font-weight:600; }
+  .hex { font-size:11px; opacity:.7; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw" style="background:var(--fei-navy); color:#fff"><span class="name">Navy Anker</span><span class="hex">#0F172A · web body</span></div>
+    <div class="sw" style="background:var(--fei-black); color:#fff"><span class="name">Schwarz Anker</span><span class="hex">#111111 · print body</span></div>
+    <div class="sw" style="background:var(--fei-ink-700); color:#fff"><span class="name">Ink 700</span><span class="hex">#334155 · secondary</span></div>
+    <div class="sw" style="background:var(--fei-ink-500); color:#fff"><span class="name">Ink 500</span><span class="hex">#64748B · muted</span></div>
+    <div class="sw" style="background:var(--fei-ink-400); color:#fff"><span class="name">Ink 400</span><span class="hex">#94A3B8 · faint</span></div>
+  </div>
+</body>
+</html>

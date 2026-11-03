@@ -1,0 +1,28 @@
+<!-- @dsCard group="Colors" viewport="700x180" name="A11y — Allowed vs Forbidden" subtitle="Yellow & green never as text on cream; body always ink" -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin:0; font-family:var(--font-body); background:var(--surface-page); padding:20px; }
+  .grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; }
+  .cell { border-radius:var(--radius-md); padding:14px; border:1px solid var(--border-default); background:var(--fei-cream-soft); position:relative; }
+  .cell .big { font-family:var(--font-display); font-weight:900; font-size:26px; line-height:1.1; }
+  .tag { position:absolute; top:10px; right:10px; font-size:11px; font-weight:700; padding:2px 8px; border-radius:999px; }
+  .ok { background:rgba(21,128,61,.14); color:var(--fei-success); }
+  .no { background:rgba(217,119,6,.14); color:var(--fei-warning); }
+  .lbl { font-size:11px; color:var(--text-muted); margin-top:8px; }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="cell"><span class="tag ok">✓ AAA</span><div class="big" style="color:var(--fei-navy)">Navy Text</div><div class="lbl">15.59:1 — body OK</div></div>
+    <div class="cell" style="background:var(--fei-yellow)"><span class="tag ok">✓ 9.85</span><div class="big" style="color:var(--fei-black)">Black on Gelb</div><div class="lbl" style="color:#3a2f00">Yellow as surface ✓</div></div>
+    <div class="cell"><span class="tag no">✗ 1.67</span><div class="big" style="color:var(--fei-yellow)">Gelb Text</div><div class="lbl">Forbidden on cream</div></div>
+    <div class="cell"><span class="tag ok">✓ AA</span><div class="big" style="color:var(--fei-lila)">Lila</div><div class="lbl">Highlight · names, form focus</div></div>
+    <div class="cell" style="background:var(--fei-green)"><span class="tag ok">✓</span><div class="big" style="color:#fff">White on Grün</div><div class="lbl" style="color:#dcfce7">Green as surface ✓</div></div>
+    <div class="cell"><span class="tag no">✗ 2.88</span><div class="big" style="color:var(--fei-green)">Grün Text</div><div class="lbl">Forbidden on cream</div></div>
+  </div>
+</body>
+</html>

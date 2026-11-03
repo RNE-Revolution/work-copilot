@@ -1,0 +1,10 @@
+/* ═══════════════════════════════════════════════════════════════
+   fei Bürgerenergie eG — Design System entry point
+   Consumers link THIS file (published as dist/styles.css).
+   ═══════════════════════════════════════════════════════════════ */
+@import './tokens/fonts.css';
+@import './tokens/colors.css';
+@import './tokens/typography.css';
+@import './tokens/spacing.css';
+@import './base.css';
+@import './components.css';

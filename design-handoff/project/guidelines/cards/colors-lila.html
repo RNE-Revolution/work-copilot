@@ -1,0 +1,29 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Highlight — Lila" subtitle="Highlight only: review names, form-field focus & borders" -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin:0; font-family:var(--font-body); background:var(--surface-page); padding:20px; display:flex; gap:14px; align-items:stretch; }
+  .sw { width:150px; border-radius:var(--radius-md); height:104px; display:flex; flex-direction:column; justify-content:flex-end; padding:12px; border:1px solid var(--border-default); }
+  .name { font-size:12px; font-weight:600; }
+  .hex { font-size:11px; opacity:.8; }
+  .demo { flex:1; background:var(--fei-cream-soft); border:1px solid var(--border-default); border-radius:var(--radius-md); display:flex; align-items:center; gap:18px; padding:0 22px; }
+  .num { font-family:var(--font-display); font-weight:900; font-size:64px; color:var(--accent-display); line-height:1; }
+  .mark { font-family:var(--font-display); font-style:italic; font-size:22px; color:var(--accent-display); }
+</style>
+</head>
+<body>
+  <div class="sw" style="background:var(--fei-lila); color:#fff"><span class="name">Lila</span><span class="hex">#565CDE · accent</span></div>
+  <div class="sw" style="background:var(--fei-lila-deep); color:#fff"><span class="name">Lila Deep</span><span class="hex">#4449C4 · hover</span></div>
+  <div class="sw" style="background:var(--fei-lavender); color:var(--fei-navy)"><span class="name">Lavendel</span><span class="hex">#C9CBF5 · soft</span></div>
+  <div class="demo">
+    <div>
+      <div style="font-family:var(--font-display);font-weight:700;font-size:22px;color:var(--fei-lila);line-height:1">Jürgen S.</div>
+      <div style="font-size:12px;color:var(--text-muted);margin-top:2px">Rezension</div>
+    </div>
+    <div style="flex:1;background:#fff;border:2px solid var(--fei-lila);border-radius:10px;padding:9px 12px;font-size:13px;color:var(--text-body);box-shadow:0 0 0 3px var(--fei-lila-wash)">name@beispiel.de</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,369 @@
+/* ═══════════════════════════════════════════════════════════════
+   fei Bürgerenergie eG — Component styles
+   Every rule reads semantic tokens only, so components follow the
+   active surface context (web default · .fei-paper · .fei-kampagne).
+   Class prefix: fei-  (shared with the Odoo block system)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Button ────────────────────────────────────────────────── */
+.fei-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: var(--weight-bold);
+  line-height: 1;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform var(--dur-base) var(--ease-out), background var(--dur-fast),
+    box-shadow var(--dur-fast), color var(--dur-fast), border-color var(--dur-fast);
+}
+.fei-btn svg { width: 1.15em; height: 1.15em; flex-shrink: 0; }
+.fei-btn:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.fei-btn:hover:not([aria-disabled='true']) { transform: scale(1.05); }
+.fei-btn:active:not([aria-disabled='true']) { transform: scale(1.01); }
+.fei-btn[aria-disabled='true'] { opacity: 0.5; cursor: not-allowed; }
+
+.fei-btn--sm { padding: 0.5rem 1.125rem; font-size: var(--text-sm); }
+.fei-btn--md { padding: 0.75rem 1.75rem; font-size: var(--text-base); }
+.fei-btn--lg { padding: 1rem 2rem; font-size: var(--text-base); }
+
+.fei-btn--primary { background: var(--action-primary); color: var(--text-on-green); box-shadow: var(--shadow-cta); }
+.fei-btn--primary:hover:not([aria-disabled='true']) { background: var(--action-primary-hover); }
+
+.fei-btn--highlight { background: var(--action-highlight); color: var(--text-on-yellow); box-shadow: var(--shadow-cta-yellow); }
+.fei-btn--highlight:hover:not([aria-disabled='true']) { background: var(--fei-yellow-deep); }
+
+.fei-btn--secondary { background: var(--fei-white); color: var(--fei-navy); border-color: var(--border-default); box-shadow: var(--shadow-xs); }
+.fei-btn--secondary:hover:not([aria-disabled='true']) { border-color: var(--fei-green); }
+
+.fei-btn--ghost { background: transparent; color: var(--action-primary); }
+.fei-btn--ghost:hover:not([aria-disabled='true']) { color: var(--action-primary-hover); }
+
+.fei-btn--inverse {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--fei-white);
+  border-color: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+.fei-btn--inverse:hover:not([aria-disabled='true']) { background: rgba(255, 255, 255, 0.18); }
+
+/* ─── Tag ───────────────────────────────────────────────────── */
+.fei-tag {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  line-height: 1;
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+}
+.fei-tag--soft    { background: var(--fei-green-wash); color: var(--fei-green-700); }
+.fei-tag--solid   { background: var(--action-primary); color: var(--text-on-green); }
+.fei-tag--outline { background: transparent; color: var(--fei-green-700); border-color: var(--fei-green); }
+.fei-tag--neutral { background: var(--surface-card-soft); color: var(--fei-navy); }
+
+/* ─── Badge ─────────────────────────────────────────────────── */
+.fei-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  line-height: 1;
+  padding: 0.35rem 0.7rem;
+  border-radius: var(--radius-pill);
+}
+.fei-badge__dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.fei-badge--neutral { background: var(--surface-card-soft); color: var(--fei-navy); }
+.fei-badge--success { background: rgba(21, 128, 61, 0.12); color: var(--fei-success); }
+.fei-badge--warning { background: rgba(217, 119, 6, 0.14); color: var(--fei-warning); }
+
+/* ─── Eyebrow ───────────────────────────────────────────────── */
+.fei-eyebrow {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--eyebrow-size);
+  font-weight: var(--eyebrow-weight);
+  text-transform: var(--eyebrow-transform);
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--action-primary);
+}
+.fei-eyebrow--muted   { color: var(--text-muted); }
+.fei-eyebrow--inverse { color: var(--fei-green); }
+
+/* ─── Card ──────────────────────────────────────────────────── */
+.fei-card {
+  border-radius: var(--radius-lg);
+  border: var(--border-width-card) solid var(--border-default);
+  box-shadow: var(--shadow-card);
+  background: var(--surface-card);
+  color: var(--text-body);
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base), border-color var(--dur-base);
+}
+.fei-card--soft     { background: var(--surface-card-soft); }
+.fei-card--navy     { background: var(--surface-inverse); color: var(--text-on-inverse); border-color: rgba(255, 255, 255, 0.08); box-shadow: none; }
+.fei-card--green    { background: var(--surface-feature); color: var(--fei-white); border-color: transparent; box-shadow: var(--shadow-sticky); }
+.fei-card--gradient { background: var(--surface-feature-gradient); color: var(--fei-white); border-color: transparent; box-shadow: var(--shadow-sticky); }
+.fei-card--interactive { cursor: pointer; }
+.fei-card--interactive:hover { transform: var(--hover-lift) scale(1.01); box-shadow: var(--shadow-green); border-color: var(--fei-green); }
+.fei-card--interactive.fei-card--navy:hover,
+.fei-card--interactive.fei-card--green:hover,
+.fei-card--interactive.fei-card--gradient:hover { border-color: transparent; box-shadow: var(--shadow-sticky); }
+
+/* ─── BrandIcon ─────────────────────────────────────────────── */
+.fei-brandicon { display: block; object-fit: contain; }
+.fei-brandicon-frame {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+  background: var(--surface-card-soft);
+  border: 1px solid var(--border-default);
+}
+
+/* ─── ServiceCard ───────────────────────────────────────────── */
+.fei-service-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  background: var(--surface-card);
+  border: var(--border-width-card) solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-card);
+  color: var(--text-body);
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base), border-color var(--dur-base);
+  --sc-title: var(--text-body);
+  --sc-body: var(--text-secondary);
+  --sc-cta: var(--fei-green);
+}
+a.fei-service-card { cursor: pointer; }
+.fei-service-card:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; }
+.fei-service-card:hover { transform: var(--hover-lift) scale(1.01); border-color: var(--fei-green); box-shadow: var(--shadow-green); }
+.fei-service-card--accent-yellow { --sc-cta: var(--fei-yellow-deep); }
+
+.fei-service-card--feature { background: var(--surface-feature); border-color: transparent; box-shadow: var(--shadow-cta); }
+.fei-service-card--feature-deep { background: var(--surface-feature-gradient); border-color: transparent; box-shadow: var(--shadow-sticky); }
+.fei-service-card--feature,
+.fei-service-card--feature-deep { --sc-title: var(--fei-white); --sc-cta: var(--fei-white); }
+.fei-service-card--feature { --sc-body: rgba(255, 255, 255, 0.86); }
+.fei-service-card--feature-deep { --sc-body: rgba(255, 255, 255, 0.8); }
+.fei-service-card--feature:hover,
+.fei-service-card--feature-deep:hover { border-color: transparent; box-shadow: var(--shadow-sticky); }
+
+.fei-service-card__icon { margin-bottom: var(--space-4); }
+.fei-service-card__title {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-2xl);
+  line-height: var(--leading-snug);
+  color: var(--sc-title);
+}
+.fei-service-card__body { margin: 0; font-family: var(--font-body); line-height: var(--leading-relaxed); color: var(--sc-body); }
+.fei-service-card__cta {
+  margin-top: var(--space-5);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--sc-cta);
+}
+.fei-service-card__cta svg { width: 16px; height: 16px; transition: transform var(--dur-base) var(--ease-out); }
+.fei-service-card:hover .fei-service-card__cta svg { transform: translateX(3px); }
+
+/* ─── StatBlock ─────────────────────────────────────────────── */
+.fei-stat { font-family: var(--font-body); --stat-figure: var(--accent-display); }
+.fei-stat--center { text-align: center; }
+.fei-stat__figure {
+  font-family: var(--font-display);
+  font-weight: var(--weight-black);
+  line-height: 1;
+  letter-spacing: var(--tracking-tight);
+  color: var(--stat-figure);
+  font-size: var(--text-stat);
+}
+.fei-stat--sm .fei-stat__figure { font-size: 1.875rem; }
+.fei-stat--lg .fei-stat__figure { font-size: clamp(2.5rem, 5vw, 3.75rem); }
+.fei-stat__unit { font-size: 0.5em; margin-left: 0.25rem; font-weight: var(--weight-bold); }
+.fei-stat__label { margin-top: 0.4rem; font-size: var(--text-sm); font-weight: var(--weight-semibold); color: var(--text-body); }
+.fei-stat__sub { margin-top: 0.15rem; font-size: var(--text-xs); color: var(--text-muted); }
+.fei-stat--on-dark .fei-stat__label { color: var(--text-on-inverse); }
+.fei-stat--on-dark .fei-stat__sub { color: var(--text-on-inverse-muted); }
+.fei-stat--yellow { --stat-figure: var(--fei-yellow); }
+.fei-stat--navy   { --stat-figure: var(--fei-navy); }
+.fei-stat--white  { --stat-figure: var(--fei-white); }
+
+/* ─── Input ─────────────────────────────────────────────────── */
+.fei-field { font-family: var(--font-body); }
+.fei-field__label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--text-body);
+}
+.fei-field__required { color: var(--fei-warning); margin-left: 2px; }
+.fei-field__control {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--text-body);
+  background: var(--fei-white);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: 0.7rem 0.9rem;
+  outline: none;
+  transition: border-color var(--dur-fast), box-shadow var(--dur-fast);
+}
+textarea.fei-field__control { resize: vertical; }
+.fei-field__control::placeholder { color: var(--text-muted); }
+/* RULE 3: lila marks the active form field */
+.fei-field__control:focus { border-color: var(--accent-highlight); box-shadow: 0 0 0 3px var(--fei-lila-wash); }
+.fei-field__control[aria-invalid='true'] { border-color: var(--fei-warning); box-shadow: none; }
+.fei-field__msg { margin: 0.4rem 0 0; font-size: var(--text-xs); color: var(--text-muted); }
+.fei-field__msg--error { color: var(--fei-warning); }
+
+/* ─── Accordion ─────────────────────────────────────────────── */
+.fei-accordion { font-family: var(--font-body); }
+.fei-accordion__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1.25rem 0;
+  margin: 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border-default);
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  color: var(--text-body);
+  transition: color var(--dur-fast);
+}
+.fei-accordion__trigger:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.fei-accordion__trigger[aria-expanded='true'] { color: var(--fei-green-700); }
+.fei-accordion__chip {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-card-soft);
+  color: var(--fei-navy);
+  transition: transform var(--dur-base) var(--ease-out), background var(--dur-fast), color var(--dur-fast);
+}
+.fei-accordion__chip svg { width: 12px; height: 12px; }
+.fei-accordion__trigger[aria-expanded='true'] .fei-accordion__chip { background: var(--fei-green); color: var(--fei-white); transform: rotate(45deg); }
+.fei-accordion__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--dur-base) var(--ease-out);
+}
+.fei-accordion__panel[data-open='true'] { grid-template-rows: 1fr; }
+.fei-accordion__panel > div { overflow: hidden; }
+.fei-accordion__content {
+  padding: 0.85rem 0 1.25rem;
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  font-size: var(--text-sm);
+}
+
+/* ─── Avatar ────────────────────────────────────────────────── */
+.fei-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  font-family: var(--font-body);
+  font-weight: var(--weight-bold);
+}
+.fei-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.fei-avatar--green { background: var(--action-primary); color: var(--fei-white); }
+.fei-avatar--lila  { background: var(--accent-highlight); color: var(--fei-white); }
+.fei-avatar--navy  { background: var(--fei-navy); color: var(--fei-cream-soft); }
+.fei-avatar--cream { background: var(--fei-cream-mid); color: var(--fei-navy); }
+
+/* ─── Logo ──────────────────────────────────────────────────── */
+.fei-logo { display: inline-block; line-height: 0; }
+.fei-logo img { display: block; height: 100%; width: auto; }
+
+/* ═══ Kampagne elements (Plakat · Flyer · Social — never web) ═══ */
+.fei-blitz { position: absolute; z-index: 0; pointer-events: none; }
+.fei-blitz path { fill: none; stroke: var(--blitz-stroke, var(--fei-yellow-soft)); }
+
+.fei-bubble {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1125 / 1064;
+}
+.fei-bubble__shape {
+  position: absolute;
+  inset: 0;
+  background: var(--bubble-fill, var(--fei-yellow));
+}
+.fei-bubble__text {
+  position: relative;
+  /* the tail sits bottom-left; keep text in the round body, ≥ 8 % inset */
+  margin: 0 0 14% 0;
+  padding: 0 14%;
+  text-align: center;
+  font-weight: var(--weight-bold);
+  font-style: italic;
+  line-height: var(--leading-bubble);
+  color: var(--bubble-text, var(--fei-black));
+}
+.fei-bubble--info .fei-bubble__text { font-weight: var(--weight-medium); }
+
+.fei-foto-bubble {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--photo-tint, var(--fei-lila));
+}
+.fei-foto-bubble img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+  mix-blend-mode: screen;
+  opacity: 0.85;
+}
+
+.fei-pfeil { position: absolute; pointer-events: none; }
+
+/* ─── Motion safety ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .fei-btn,
+  .fei-card,
+  .fei-service-card,
+  .fei-service-card__cta svg,
+  .fei-accordion__chip,
+  .fei-accordion__panel { transition: none; }
+  .fei-btn:hover:not([aria-disabled='true']),
+  .fei-card--interactive:hover,
+  .fei-service-card:hover { transform: none; }
+}

@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" width="1400" height="1000">
+  <defs>
+    
+  </defs>
+
+  <rect width="1400" height="1000" fill="#ffffff"></rect>
+
+  <text x="700" y="100" text-anchor="middle" class="title">Unsere Leistungen</text>
+
+  <circle cx="700" cy="555" r="320" fill="none" stroke="#1a1a1a" stroke-width="2.5"></circle>
+
+  
+  <g transform="translate(540, 278)">
+    <circle r="58" fill="#ffffff"></circle>
+    <g transform="translate(-10, -6)">
+      <g class="icon-fill">
+        <rect x="-5" y="-32" width="10" height="11" rx="1.5"></rect>
+        <rect x="-5" y="-32" width="10" height="11" rx="1.5" transform="rotate(45)"></rect>
+        <rect x="-5" y="-32" width="10" height="11" rx="1.5" transform="rotate(90)"></rect>
+        <rect x="-5" y="-32" width="10" height="11" rx="1.5" transform="rotate(135)"></rect>
+        <rect x="-5" y="-32" width="10" height="11" rx="1.5" transform="rotate(180)"></rect>
+        <rect x="-5" y="-32" width="10" height="11" rx="1.5" transform="rotate(225)"></rect>
+        <rect x="-5" y="-32" width="10" height="11" rx="1.5" transform="rotate(270)"></rect>
+        <rect x="-5" y="-32" width="10" height="11" rx="1.5" transform="rotate(315)"></rect>
+      </g>
+      <circle r="22" class="icon-fill"></circle>
+      <circle r="9" fill="#ffffff"></circle>
+    </g>
+    <g transform="translate(28, 28)">
+      <g class="icon-fill">
+        <rect x="-3" y="-19" width="6" height="7" rx="0.8"></rect>
+        <rect x="-3" y="-19" width="6" height="7" rx="0.8" transform="rotate(45)"></rect>
+        <rect x="-3" y="-19" width="6" height="7" rx="0.8" transform="rotate(90)"></rect>
+        <rect x="-3" y="-19" width="6" height="7" rx="0.8" transform="rotate(135)"></rect>
+        <rect x="-3" y="-19" width="6" height="7" rx="0.8" transform="rotate(180)"></rect>
+        <rect x="-3" y="-19" width="6" height="7" rx="0.8" transform="rotate(225)"></rect>
+        <rect x="-3" y="-19" width="6" height="7" rx="0.8" transform="rotate(270)"></rect>
+        <rect x="-3" y="-19" width="6" height="7" rx="0.8" transform="rotate(315)"></rect>
+      </g>
+      <circle r="13" class="icon-fill"></circle>
+      <circle r="5" fill="#ffffff"></circle>
+    </g>
+  </g>
+  <text x="395" y="240" class="label" text-anchor="end">Wartung &amp;</text>
+  <text x="395" y="284" class="label" text-anchor="end">Instandhaltung</text>
+
+  
+  <g transform="translate(860, 278)">
+    <circle r="58" fill="#ffffff"></circle>
+    <rect x="-26" y="-36" width="52" height="74" class="icon-stroke" fill="#ffffff" rx="3"></rect>
+    <rect x="-12" y="-42" width="24" height="11" class="icon-fill" rx="2"></rect>
+    <g class="icon-fill">
+      <rect x="-18" y="-12" width="6" height="22" rx="1"></rect>
+      <rect x="-8" y="-22" width="6" height="32" rx="1"></rect>
+      <rect x="2" y="-16" width="6" height="26" rx="1"></rect>
+      <rect x="12" y="-4" width="6" height="14" rx="1"></rect>
+    </g>
+    <line x1="-20" y1="16" x2="20" y2="16" class="icon-stroke" stroke-width="2"></line>
+    <line x1="-18" y1="24" x2="18" y2="24" class="icon-stroke" stroke-width="2.5"></line>
+    <line x1="-18" y1="32" x2="10" y2="32" class="icon-stroke" stroke-width="2.5"></line>
+  </g>
+  <text x="1005" y="290" class="label" text-anchor="start">Projektierung</text>
+
+  
+  <g transform="translate(1020, 555)">
+    <circle r="58" fill="#ffffff"></circle>
+    <g class="icon-stroke" fill="#ffffff" stroke-width="3">
+      <path d="M -32,28 A 32,8 0 0,0 32,28 L 32,18 A 32,8 0 0,1 -32,18 Z"></path>
+      <ellipse cx="0" cy="18" rx="32" ry="8"></ellipse>
+      <path d="M -32,8 A 32,8 0 0,0 32,8 L 32,-2 A 32,8 0 0,1 -32,-2 Z"></path>
+      <ellipse cx="0" cy="-2" rx="32" ry="8"></ellipse>
+      <path d="M -32,-12 A 32,8 0 0,0 32,-12 L 32,-22 A 32,8 0 0,1 -32,-22 Z"></path>
+      <ellipse cx="0" cy="-22" rx="32" ry="8"></ellipse>
+    </g>
+    <g stroke="#1a1a1a" stroke-width="2.8" fill="none" stroke-linecap="round">
+      <path d="M 5,-29 A 9,9 0 1,0 5,-15"></path>
+      <line x1="-7" y1="-25" x2="6" y2="-25"></line>
+      <line x1="-7" y1="-19" x2="6" y2="-19"></line>
+    </g>
+  </g>
+  <text x="1095" y="565" class="label" text-anchor="start">Finanzierung</text>
+
+  
+  
+  
+  
+  <g transform="translate(860, 832)">
+    <circle r="58" fill="#ffffff"></circle>
+    <g transform="rotate(-35)">
+      
+      <path d="&#xA;        M -22,-46&#xA;        L 22,-46&#xA;        L 22,-20&#xA;        L 8,-20&#xA;        L 8,-32&#xA;        L -8,-32&#xA;        L -8,-20&#xA;        L -22,-20&#xA;        Z" class="icon-fill"></path>
+      
+      <rect x="-7" y="-22" width="14" height="44" class="icon-fill"></rect>
+      
+      <circle cx="0" cy="32" r="15" class="icon-fill"></circle>
+      <circle cx="0" cy="32" r="7" fill="#ffffff"></circle>
+    </g>
+  </g>
+  <text x="1005" y="845" class="label" text-anchor="start">Installation</text>
+
+  
+  <g transform="translate(540, 832)">
+    <circle r="58" fill="#ffffff"></circle>
+    <rect x="-26" y="-36" width="52" height="74" class="icon-stroke" fill="#ffffff" rx="3"></rect>
+    <rect x="-12" y="-42" width="24" height="11" class="icon-fill" rx="2"></rect>
+    <g stroke="#1a1a1a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M -18,-18 L -14,-12 L -8,-22"></path>
+      <line x1="-3" y1="-15" x2="18" y2="-15"></line>
+      <path d="M -18,2 L -14,8 L -8,-2"></path>
+      <line x1="-3" y1="5" x2="18" y2="5"></line>
+      <path d="M -18,22 L -14,28 L -8,18"></path>
+      <line x1="-3" y1="25" x2="14" y2="25"></line>
+    </g>
+  </g>
+  <text x="395" y="845" class="label" text-anchor="end">Betreiberpflichten</text>
+
+  
+  <g transform="translate(380, 555)">
+    <circle r="58" fill="#ffffff"></circle>
+    
+    <circle r="36" fill="none" stroke="#1a1a1a" stroke-width="4"></circle>
+    
+    <path d="M 4,-22 L -10,4 L -2,4 L -6,20 L 8,-6 L 0,-6 L 4,-22 Z" class="icon-fill"></path>
+  </g>
+  <text x="320" y="565" class="label" text-anchor="end">Energieversorgung</text>
+
+  <image x="540" y="475" width="320" height="182" preserveAspectRatio="xMidYMid meet"></image>
+
+</svg>

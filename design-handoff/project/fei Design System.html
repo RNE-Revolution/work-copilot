@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>fei Bürgerenergie — Design System</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  deck-stage:not(:defined) { visibility: hidden; }
+  html, body { margin: 0; background: #14171b; }
+
+  .s {
+    width: 100%; height: 100%; box-sizing: border-box; padding: 92px 110px;
+    background: var(--surface-page); color: var(--text-body);
+    font-family: var(--font-body); display: flex; flex-direction: column; overflow: hidden;
+  }
+  .s--sunken { background: var(--surface-sunken); }
+  .s--paper  { background: var(--fei-cream-soft); }
+  .s--navy   { background: var(--surface-inverse-deep); color: var(--text-on-inverse); }
+
+  .eb { font-size: 21px; font-weight: 600; text-transform: uppercase; letter-spacing: .12em;
+        color: var(--action-primary); margin: 0 0 22px; }
+  .s--navy .eb { color: var(--fei-green); }
+
+  h1.t { font-family: var(--font-display); font-weight: 900; font-size: 104px; line-height: 1.0; margin: 0; letter-spacing: -0.015em; }
+  h2.t { font-family: var(--font-display); font-weight: 900; font-size: 66px; line-height: 1.06; margin: 0 0 18px; letter-spacing: -0.01em; }
+  .lead { font-size: 27px; line-height: 1.5; color: var(--text-secondary); margin: 0; max-width: 34ch; }
+  .s--navy .lead { color: var(--text-on-inverse-muted); }
+  .triad { font-family: var(--font-display); font-weight: 900; font-size: 40px; margin: 0; }
+
+  /* swatches */
+  .row { display: flex; gap: 18px; }
+  .sw { flex: 1; border-radius: 16px; min-height: 168px; display: flex; flex-direction: column;
+        justify-content: flex-end; padding: 18px; border: 1px solid var(--border-default); }
+  .sw .n { font-size: 19px; font-weight: 600; line-height: 1.1; }
+  .sw .h { font-size: 14px; opacity: .72; font-variant-numeric: tabular-nums; margin-top: 2px; }
+  .note { font-size: 21px; line-height: 1.5; color: var(--text-muted); margin: 26px 0 0; max-width: 96ch; }
+  .s--navy .note { color: var(--text-on-inverse-muted); }
+  .note strong { color: var(--text-body); font-weight: 600; }
+  .s--navy .note strong { color: var(--fei-white); }
+
+  .grow { flex: 1; }
+  .foot { font-size: 18px; letter-spacing: .04em; color: var(--text-muted); }
+  .s--navy .foot { color: var(--text-on-inverse-muted); }
+
+  /* stat row */
+  .stats { display: flex; gap: 64px; margin-top: 8px; }
+  .stat .fig { font-family: var(--font-display); font-weight: 900; font-size: 72px; line-height: 1; color: var(--accent-display); letter-spacing: -0.01em; }
+  .stat .fig .u { font-size: .42em; margin-left: .25rem; font-weight: 700; }
+  .stat .lab { font-size: 18px; font-weight: 600; margin-top: 6px; }
+  .stat .sub { font-size: 15px; color: var(--text-muted); margin-top: 2px; }
+
+  /* type specimen */
+  .specimen { display: flex; gap: 56px; align-items: stretch; }
+  .spec-card { flex: 1; border: 1px solid var(--border-default); border-radius: 18px; padding: 34px; background: #fff; box-shadow: var(--shadow-card); }
+  .spec-aa-serif { font-family: var(--font-display); font-weight: 900; font-style: italic; letter-spacing: -0.03em; font-size: 120px; line-height: .9; color: var(--text-body); }
+  .spec-aa-sans  { font-family: var(--font-body); font-weight: 800; font-size: 120px; line-height: .9; color: var(--text-body); }
+  .spec-name { font-family: var(--font-display); font-weight: 700; font-size: 30px; margin: 18px 0 4px; }
+  .spec-role { font-size: 18px; color: var(--text-muted); }
+  .scale li { font-size: 21px; line-height: 1.9; color: var(--text-secondary); }
+  .scale b { color: var(--text-body); }
+
+  /* icon grid */
+  .icons { display: grid; grid-template-columns: repeat(7, 1fr); gap: 20px; }
+  .ico { background: var(--surface-card-soft); border: 1px solid var(--border-default); border-radius: 16px;
+         display: flex; align-items: center; justify-content: center; aspect-ratio: 1 / 1; }
+  .ico img { width: 78%; height: 78%; object-fit: contain; display: block; }
+
+  /* component showcase */
+  .btn { display: inline-flex; align-items: center; gap: .5rem; font-family: var(--font-body); font-weight: 700;
+         font-size: 19px; border-radius: 999px; padding: 15px 30px; border: 0; }
+  .btn-green { background: var(--action-primary); color: #fff; box-shadow: var(--shadow-cta); }
+  .btn-yellow { background: var(--fei-yellow); color: var(--text-on-yellow); }
+  .btn-ghost { background: transparent; color: var(--fei-navy); border: 2px solid var(--border-strong); }
+  .pill { display: inline-flex; align-items: center; gap: .4rem; font-size: 16px; font-weight: 600; padding: 7px 15px; border-radius: 999px; }
+  .card-demo { border-radius: 16px; padding: 26px; background: #fff; box-shadow: var(--shadow-card); border: 1px solid var(--border-default); }
+  .feat-demo { border-radius: 16px; padding: 26px; background: var(--surface-feature-gradient); color: #fff; }
+  .label-sm { font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); margin: 0 0 14px; }
+
+  .cols { display: grid; gap: 28px; }
+  .cards3 { grid-template-columns: repeat(3, 1fr); }
+  .cards2 { grid-template-columns: 1fr 1fr; }
+
+  /* contrast chips */
+  .cc { border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 6px; min-height: 120px; justify-content: center; }
+  .cc .big { font-family: var(--font-display); font-weight: 900; font-size: 30px; line-height: 1; }
+  .cc .r { font-size: 15px; opacity: .85; }
+</style>
+</head>
+<body>
+<deck-stage width="1920" height="1080">
+
+  <!-- 1 · COVER -->
+  <section data-label="Cover">
+    <div class="s s--navy" style="justify-content:space-between">
+      <div style="display:flex;align-items:center;gap:16px">
+        <span style="font-family:var(--font-display);font-weight:900;font-size:40px;color:#fff">fei</span>
+        <span style="width:10px;height:10px;border-radius:50%;background:var(--fei-green);display:inline-block"></span>
+        <span style="font-size:18px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-on-inverse-muted)">Bürgerenergie eG</span>
+      </div>
+      <div>
+        <p class="eb">Design System</p>
+        <h1 class="t" style="color:#fff">Energiewende in<br>demokratischen Händen.</h1>
+        <p class="triad" style="margin-top:34px;color:#fff">
+          <span style="color:var(--fei-green)">Sozial.</span>
+          <span style="color:var(--fei-yellow)">Regional.</span>
+          <span style="color:var(--fei-lavender)">Demokratisch.</span>
+        </p>
+      </div>
+      <p class="foot">Marke · Farbe · Typografie · Ikonographie · Komponenten · Bamberg · Würzburg · Franken</p>
+    </div>
+  </section>
+
+  <!-- 2 · DIE MARKE -->
+  <section data-label="Marke">
+    <div class="s">
+      <p class="eb">Die Marke</p>
+      <h2 class="t">Energie aus der Nachbarschaft —<br>der Gewinn bleibt hier.</h2>
+      <p class="lead" style="max-width:80ch">Eine Bürgerenergiegenossenschaft in Franken. Erneuerbare Projekte, die demokratisch ihren Mitgliedern gehören. Kein Konzern, keine Gewinnmaximierung. Die Ansprache ist <strong style="color:var(--text-body)">du</strong> — warm, gemeinschaftlich, missionsgetrieben.</p>
+      <div class="grow"></div>
+      <div class="stats">
+        <div class="stat"><div class="fig">380<span class="u">+</span></div><div class="lab">Mitglieder</div><div class="sub">und wachsend</div></div>
+        <div class="stat"><div class="fig">257<span class="u">kWp</span></div><div class="lab">Installiert</div><div class="sub">4 Projekte</div></div>
+        <div class="stat"><div class="fig">142<span class="u">t</span></div><div class="lab">CO₂ gespart</div><div class="sub">pro Jahr</div></div>
+        <div class="stat"><div class="fig">4<span class="u">%</span></div><div class="lab">Rendite p.a.</div><div class="sub">für Mitglieder</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · INK & TEXT -->
+  <section data-label="Ink & Text">
+    <div class="s">
+      <p class="eb">Farbe · Ink &amp; Text</p>
+      <h2 class="t">Navy-Tinte auf Weiß.</h2>
+      <div class="grow"></div>
+      <div class="row">
+        <div class="sw" style="background:var(--fei-navy);color:#fff"><span class="n">Navy</span><span class="h">#0F172A · Web-Ink</span></div>
+        <div class="sw" style="background:var(--fei-black);color:#fff"><span class="n">Schwarz</span><span class="h">#111111 · Print-Ink</span></div>
+        <div class="sw" style="background:var(--fei-navy-900);color:#fff"><span class="n">Navy 900</span><span class="h">#060D1A · dunkle Flächen</span></div>
+        <div class="sw" style="background:var(--fei-ink-700);color:#fff"><span class="n">Ink 700</span><span class="h">#334155 · sekundär</span></div>
+        <div class="sw" style="background:var(--fei-ink-500);color:#fff"><span class="n">Ink 500</span><span class="h">#64748B · muted</span></div>
+      </div>
+      <p class="note"><strong>Regel 1:</strong> Fließtext ist <strong>immer</strong> Navy (Web) oder Schwarz (Print) — niemals ein Akzent.</p>
+    </div>
+  </section>
+
+  <!-- 4 · BRAND ACCENTS -->
+  <section data-label="Brand Accents">
+    <div class="s">
+      <p class="eb">Farbe · Brand Accents</p>
+      <h2 class="t">Grün handelt. Gelb setzt Akzente.</h2>
+      <div class="grow"></div>
+      <div class="row">
+        <div class="sw" style="background:var(--fei-green);color:#fff"><span class="n">Grün</span><span class="h">#16A34A · Aktion</span></div>
+        <div class="sw" style="background:var(--fei-green-700);color:#fff"><span class="n">Grün 700</span><span class="h">#15803D · Hover</span></div>
+        <div class="sw" style="background:var(--fei-green-900);color:#fff"><span class="n">Grün 900</span><span class="h">#14532D · tief</span></div>
+        <div class="sw" style="background:var(--fei-yellow)"><span class="n">Gelb</span><span class="h">#FFE600 · Surface</span></div>
+        <div class="sw" style="background:var(--fei-yellow-deep)"><span class="n">Gelb tief</span><span class="h">#E0CA00 · Border</span></div>
+      </div>
+      <p class="note">Grün = CTAs, Tags, Erfolg, Feature-Flächen und große Display-Zahlen auf Hell. Regel 2 — Gelb ist Fläche, nie Text: trägt schwarzen Text (14,90:1), nie als Schrift auf hellem Grund, maximal als Zahlen, CTAs, Tags etc auf grünem Hintergrund.</p>
+    </div>
+  </section>
+
+  <!-- 5 · EDITORIAL ACCENT -->
+  <section data-label="Highlight">
+    <div class="s">
+      <p class="eb">Farbe · Highlight</p>
+      <h2 class="t">Lila hebt hervor.</h2>
+      <div class="specimen" style="margin-top:8px">
+        <div class="row" style="flex:1.3">
+          <div class="sw" style="background:var(--fei-lila);color:#fff"><span class="n">Lila</span><span class="h">#565CDE · Akzent</span></div>
+          <div class="sw" style="background:var(--fei-lila-deep);color:#fff"><span class="n">Lila Deep</span><span class="h">#4449C4 · Hover</span></div>
+          <div class="sw" style="background:var(--fei-lavender)"><span class="n">Lavendel</span><span class="h">#C9CBF5 · soft tint</span></div>
+        </div>
+        <div class="spec-card" style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:24px">
+          <div>
+            <div style="font-family:var(--font-display);font-weight:700;font-size:28px;color:var(--fei-lila);line-height:1">Jürgen S.</div>
+            <div style="font-size:17px;color:var(--text-muted);margin-top:4px">Rezension · Mitglied seit 2022</div>
+          </div>
+          <div style="background:#fff;border:2px solid var(--fei-lila);border-radius:12px;padding:15px 17px;font-size:19px;color:var(--text-body);box-shadow:0 0 0 4px var(--fei-lila-wash)">name@beispiel.de</div>
+        </div>
+      </div>
+      <p class="note"><strong>Regel 3 — Hebt hervor:</strong> Lila markiert <strong>Rezensenten-Namen</strong> und aktive <strong>Formularfelder</strong> (Fokus &amp; Rahmen) — sparsam, nie Fließtext. Große Display-Zahlen sind Grün. Lila auf Weiß = 6,0:1.</p>
+      <p class="note"><strong>Regel 4 — Lila nie auf Grün:</strong> Auf grünem Hintergrund übernimmt <strong>Gelb</strong> alle Akzente — Kennzahlen, CTAs, Banner. Lila bleibt hellen Flächen vorbehalten.</p>
+    </div>
+  </section>
+
+  <!-- 6 · FUNCTIONAL -->
+  <section data-label="Functional">
+    <div class="s">
+      <p class="eb">Farbe · Functional</p>
+      <h2 class="t">Nur zwei. Kein Rot, kein Blau.</h2>
+      <div class="grow"></div>
+      <div class="row" style="max-width:1000px">
+        <div class="sw" style="background:var(--fei-success);color:#fff"><span class="n">Success</span><span class="h">#15803D · Bestätigung</span></div>
+      </div>
+      <div style="display:flex;gap:14px;margin-top:30px;align-items:center">
+        <span class="pill" style="background:var(--fei-green-wash);color:var(--fei-success)">● Bestätigt</span>
+        <span class="pill" style="background:rgba(217,119,6,.14);color:var(--fei-warning)">Achtung</span>
+        <span class="pill" style="background:var(--fei-cream-mid);color:var(--fei-navy)">Neutral</span>
+      </div>
+      <p class="note">Bewusst reduziert: Erfolg (Grün) und Warnung (Bernstein, <strong>nicht</strong> das Marken-Gelb). Formular-Fehler nutzen ebenfalls Warning.</p>
+    </div>
+  </section>
+
+  <!-- 7 · SURFACES -->
+  <section data-label="Surfaces">
+    <div class="s s--sunken">
+      <p class="eb">Surfaces · Web vs. Dokument</p>
+      <h2 class="t">Weiß + soft Shadow. Cream nur für Dokumente.</h2>
+      <div class="cols cards3" style="margin-top:10px">
+        <div class="card-demo"><p class="label-sm">Web — Default</p><div style="font-family:var(--font-display);font-weight:700;font-size:26px">Card</div><div style="color:var(--text-muted);font-size:17px;margin-top:6px">weiß + soft shadow</div></div>
+        <div class="feat-demo" style="background:var(--surface-feature)"><p class="label-sm" style="color:rgba(255,255,255,.7)">Feature</p><div style="font-family:var(--font-display);font-weight:700;font-size:26px">Feature</div><div style="color:rgba(255,255,255,.85);font-size:17px;margin-top:6px">brand-grün · weißer Text</div></div>
+        <div class="feat-demo"><p class="label-sm" style="color:rgba(255,255,255,.7)">Feature-Deep</p><div style="font-family:var(--font-display);font-weight:700;font-size:26px">Feature-Deep</div><div style="color:rgba(255,255,255,.8);font-size:17px;margin-top:6px">grün → navy</div></div>
+      </div>
+      <p class="note">Weiße Cards sind Standard, Tiefe über Schatten. Farbige Feature-Cards sind Akzent — <strong>max. eine pro Gruppe</strong>. Warmes Cream-Paper nur für Dokumente/PDF via <strong>.fei-paper</strong>.</p>
+    </div>
+  </section>
+
+  <!-- 8 · TYPOGRAFIE -->
+  <section data-label="Typografie">
+    <div class="s">
+      <p class="eb">Typografie</p>
+      <h2 class="t">Inter. Nur Inter.</h2>
+      <div class="specimen" style="margin-top:8px">
+        <div class="spec-card">
+          <div class="spec-aa-serif">Aa</div>
+          <div class="spec-name">Inter Bold Italic</div>
+          <div class="spec-role">Display &amp; Headlines · 700–900 · oft kursiv</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-aa-sans">Aa</div>
+          <div class="spec-name" style="font-family:var(--font-body)">Inter</div>
+          <div class="spec-role">UI Sans · Body, Labels, Daten</div>
+        </div>
+        <div class="spec-card" style="display:flex;flex-direction:column;justify-content:center">
+          <ul class="scale" style="margin:0;padding-left:22px">
+            <li><b>Hero</b> · clamp → 5,5rem</li>
+            <li><b>Display</b> · 3rem</li>
+            <li><b>Card-Titel</b> · 2,25rem</li>
+            <li><b>Stat</b> · 3rem · Inter 900</li>
+            <li><b>Body</b> · 1,125rem · Leading 1,75</li>
+            <li><b>Eyebrow</b> · 0,875rem · UPPERCASE · 0,1em</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note">Eyebrow → Headline → Lead ist der wiederkehrende Sektions-Auftakt. Drei-Wort-Triaden sind ein Marken-Stilmittel.</p>
+    </div>
+  </section>
+
+  <!-- 9 · ANIMATED OUTLINE ICONS -->
+  <section data-label="Outline Icons">
+    <div class="s">
+      <p class="eb">Ikonographie · Animated Outline Icons</p>
+      <h2 class="t">Das Marken-Icon-Set.</h2>
+      <div class="icons" style="margin-top:8px">
+        <div class="ico"><img src="assets/icons/solar-panel.gif" alt=""></div>
+        <div class="ico"><img src="assets/icons/electric-car.gif" alt=""></div>
+        <div class="ico"><img src="assets/icons/bar-chart-growth.gif" alt=""></div>
+        <div class="ico"><img src="assets/icons/dividends.gif" alt=""></div>
+        <div class="ico"><img src="assets/icons/home.gif" alt=""></div>
+        <div class="ico"><img src="assets/icons/location-pin.gif" alt=""></div>
+        <div class="ico"><img src="assets/icons/approve-checked.gif" alt=""></div>
+        <div class="ico"><img src="assets/icons/clock-time.gif" alt=""></div>
+        <div class="ico"><img src="assets/icons/consultation.gif" alt=""></div>
+        <div class="ico"><img src="assets/icons/growing-plant.gif" alt=""></div>
+        <div class="ico"><img src="assets/icons/recycling.gif" alt=""></div>
+        <div class="ico"><img src="assets/icons/water-drop.gif" alt=""></div>
+        <div class="ico"><img src="assets/icons/cloud.gif" alt=""></div>
+        <div class="ico"><img src="assets/icons/magnifier-search.gif" alt=""></div>
+        <div class="ico"><img src="assets/icons/bicycle.gif" alt=""></div>
+        <div class="ico"><img src="assets/icons/person-protest.gif" alt=""></div>
+        <div class="ico"><img src="assets/icons/privacy-policy.gif" alt=""></div>
+        <div class="ico"><img src="assets/icons/rules.gif" alt=""></div>
+        <div class="ico"><img src="assets/icons/glasses-eye.gif" alt=""></div>
+        <div class="ico"><img src="assets/icons/desert.gif" alt=""></div>
+        <div class="ico"><img src="assets/icons/melting-glacier.gif" alt=""></div>
+      </div>
+      <p class="note">21 looping GIFs (400×400, ~62 Frames) · Navy-Outline + Marken-Gelb #FFE600 · 40–96px · Raster, nicht umfärbbar · nie auf Gelb.</p>
+    </div>
+  </section>
+
+  <!-- 10 · BRAND ILLUSTRATIONS -->
+  <section data-label="Illustrationen">
+    <div class="s s--sunken">
+      <p class="eb">Ikonographie · Illustrationen &amp; UI-Icons</p>
+      <h2 class="t">Flache Vektor-Illustrationen.</h2>
+      <div class="specimen" style="margin-top:8px;align-items:stretch">
+        <div class="spec-card" style="flex:1.4;display:flex;align-items:center;justify-content:center"><img src="assets/brand/drei-icons-pv-emobility-kreislauf.svg" alt="PV · E-Mobilität · Kreislauf" style="max-width:100%;max-height:300px"></div>
+        <div class="spec-card" style="flex:1.4;display:flex;align-items:center;justify-content:center"><img src="assets/brand/unsere-leistungen.svg" alt="Unsere Leistungen" style="max-width:100%;max-height:300px"></div>
+        <div class="spec-card" style="flex:.7;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px"><img src="assets/brand/linktree-qr.png" alt="QR" style="width:150px;height:150px"><span style="font-size:16px;color:var(--text-muted)">Linktree QR</span></div>
+      </div>
+      <p class="note">Zwei flache Marken-SVGs (PV / E-Mobilität / Kreislauf · Leistungen). UI-Utility-Icons: 2px-Stroke-Linienicons im Heroicons-Stil, erben <strong>currentColor</strong>.</p>
+    </div>
+  </section>
+
+  <!-- 11 · KOMPONENTEN -->
+  <section data-label="Komponenten">
+    <div class="s">
+      <p class="eb">Komponenten</p>
+      <h2 class="t">React-Primitive.</h2>
+      <div class="cols cards2" style="margin-top:8px;align-items:start">
+        <div>
+          <p class="label-sm">Buttons &amp; Pills</p>
+          <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
+            <span class="btn btn-green">Mitglied werden →</span>
+            <span class="btn btn-yellow">Projekt anfragen</span>
+            <span class="btn btn-ghost">Mehr erfahren</span>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px">
+            <span class="pill" style="background:var(--action-primary);color:#fff">Mieterstrom</span>
+            <span class="pill" style="background:transparent;color:var(--fei-green-700);border:1px solid var(--fei-green)">GGV</span>
+            <span class="pill" style="background:var(--fei-green-wash);color:var(--fei-success)">● Bestätigt</span>
+            <span class="pill" style="background:rgba(217,119,6,.14);color:var(--fei-warning)">Achtung</span>
+          </div>
+          <p class="label-sm" style="margin-top:30px">Stat Block</p>
+          <div class="stat"><div class="fig" style="font-size:60px">257<span class="u">kWp</span></div><div class="lab">Installiert · 4 Projekte</div></div>
+        </div>
+        <div>
+          <p class="label-sm">Cards · weiß + Feature</p>
+          <div class="cols cards2" style="gap:22px">
+            <div class="card-demo">
+              <div style="font-family:var(--font-display);font-weight:700;font-size:24px">Mieterstrom</div>
+              <div style="color:var(--text-secondary);font-size:17px;line-height:1.6;margin:8px 0 16px">Solar aufs Dach, Strom direkt zu den Mietern.</div>
+              <span style="color:var(--action-primary);font-weight:600;font-size:16px">Mehr erfahren →</span>
+            </div>
+            <div class="feat-demo">
+              <div style="font-family:var(--font-display);font-weight:700;font-size:24px">Ladesäulen</div>
+              <div style="color:rgba(255,255,255,.82);font-size:17px;line-height:1.6;margin:8px 0 16px">Ladeinfrastruktur in Bürgerhand.</div>
+              <span style="color:#fff;font-weight:600;font-size:16px">Mehr erfahren →</span>
+            </div>
+          </div>
+          <p class="label-sm" style="margin-top:26px">Input</p>
+          <div style="background:#fff;border:1px solid var(--border-default);border-radius:12px;padding:14px 16px;font-size:18px;color:var(--text-muted);max-width:420px">name@beispiel.de</div>
+        </div>
+      </div>
+      <p class="note">Button · Badge · Tag · Card · ServiceCard · StatBlock · Input · Accordion · Avatar · BrandIcon · Eyebrow.</p>
+    </div>
+  </section>
+
+  <!-- 12 · A11Y -->
+  <section data-label="Barrierefreiheit">
+    <div class="s s--navy">
+      <p class="eb">Barrierefreiheit</p>
+      <h2 class="t" style="color:#fff">Drei harte Regeln.</h2>
+      <div style="display:flex;gap:40px;margin:10px 0 6px">
+        <div style="flex:1"><div style="font-family:var(--font-display);font-weight:900;font-size:34px;color:var(--fei-green)">01</div><p style="font-size:21px;line-height:1.5;color:var(--text-on-inverse);margin:8px 0 0">Body immer Ink — Navy/Schwarz, nie ein Akzent.</p></div>
+        <div style="flex:1"><div style="font-family:var(--font-display);font-weight:900;font-size:34px;color:var(--fei-yellow)">02</div><p style="font-size:21px;line-height:1.5;color:var(--text-on-inverse);margin:8px 0 0">Gelb ist Fläche, kein Text — trägt schwarzen Text.</p></div>
+        <div style="flex:1"><div style="font-family:var(--font-display);font-weight:900;font-size:34px;color:var(--fei-lavender)">03</div><p style="font-size:21px;line-height:1.5;color:var(--text-on-inverse);margin:8px 0 0">Lila hebt hervor: Rezensenten-Namen & Formularfelder.</p></div>
+      </div>
+      <div class="grow"></div>
+      <div class="cols" style="grid-template-columns:repeat(4,1fr);gap:16px">
+        <div class="cc" style="background:#fff"><span class="big" style="color:var(--fei-navy)">Navy / Weiß</span><span class="r" style="color:var(--text-muted)">15,59:1 · AAA</span></div>
+        <div class="cc" style="background:var(--fei-yellow)"><span class="big" style="color:#111">Schwarz / Gelb</span><span class="r" style="color:#3a2f00">14,90:1 · AAA</span></div>
+        <div class="cc" style="background:var(--fei-green)"><span class="big" style="color:#fff">Weiß / Grün</span><span class="r" style="color:#dcfce7">5,73:1 · AA</span></div>
+        <div class="cc" style="background:#fff"><span class="big" style="color:var(--fei-lila)">Lila / Weiß</span><span class="r" style="color:var(--text-muted)">6,0:1 · AA</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 · NUTZUNG -->
+  <section data-label="Nutzung">
+    <div class="s s--navy" style="justify-content:space-between">
+      <p class="eb">Nutzung</p>
+      <div>
+        <h2 class="t" style="color:#fff">Ein File: <span style="color:var(--fei-green)">styles.css</span></h2>
+        <p class="lead" style="max-width:78ch">Der Einstiegspunkt importiert alle Tokens &amp; Fonts. Komponenten kodieren nie eine feste Surface-Farbe — derselbe Code funktioniert auf Web (weiß) und im Dokument-Kontext (Cream).</p>
+        <div style="display:flex;gap:48px;margin-top:40px;font-size:20px;color:var(--text-on-inverse)">
+          <div><div style="color:var(--fei-green);font-weight:700;margin-bottom:8px">Foundations</div>tokens/ · colors · type · spacing · fonts</div>
+          <div><div style="color:var(--fei-green);font-weight:700;margin-bottom:8px">Components</div>components/core/ · 11 Primitive</div>
+          <div><div style="color:var(--fei-green);font-weight:700;margin-bottom:8px">Guidelines</div>accessibility · surfaces · Spezimen-Karten</div>
+        </div>
+      </div>
+      <p class="triad" style="color:#fff"><span style="color:var(--fei-green)">Sozial.</span> <span style="color:var(--fei-yellow)">Regional.</span> <span style="color:var(--fei-lavender)">Demokratisch.</span></p>
+    </div>
+  </section>
+
+</deck-stage>
+<script src="deck-stage.js"></script>
+</body>
+</html>

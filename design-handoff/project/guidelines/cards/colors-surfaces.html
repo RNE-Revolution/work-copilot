@@ -1,0 +1,25 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Surfaces" subtitle="Web surface stack — white pages & cards, depth via soft shadow" -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin:0; font-family:var(--font-body); background:var(--surface-sunken); padding:20px; }
+  .row { display:flex; gap:14px; }
+  .sw { flex:1; border-radius:var(--radius-md); height:104px; display:flex; flex-direction:column; justify-content:flex-end; padding:12px; }
+  .name { font-size:12px; font-weight:600; }
+  .hex { font-size:11px; opacity:.7; font-variant-numeric:tabular-nums; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw" style="background:var(--surface-card); color:var(--fei-navy); box-shadow:var(--shadow-card)"><span class="name">Card / Page</span><span class="hex">#FFFFFF · weiß + shadow</span></div>
+    <div class="sw" style="background:var(--surface-sunken); color:var(--fei-navy); border:1px solid var(--border-default)"><span class="name">Sunken</span><span class="hex">#F5F6F7 · canvas</span></div>
+    <div class="sw" style="background:var(--surface-feature); color:#fff"><span class="name">Feature</span><span class="hex">#16A34A · grün</span></div>
+    <div class="sw" style="background:var(--surface-feature-gradient); color:#fff"><span class="name">Feature-Deep</span><span class="hex">grün → navy</span></div>
+    <div class="sw" style="background:var(--surface-inverse); color:var(--fei-cream-soft)"><span class="name">Navy</span><span class="hex">#0F172A · ink</span></div>
+    <div class="sw" style="background:var(--fei-cream-soft); color:var(--fei-navy); border:1px solid var(--fei-line)"><span class="name">Paper</span><span class="hex">#faf8f3 · Dokument</span></div>
+  </div>
+</body>
+</html>

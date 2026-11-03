@@ -1,0 +1,25 @@
+/* fei Bürgerenergie eG — minimal base. Zero-specificity (:where) so apps can override. */
+:where(*, *::before, *::after) { box-sizing: border-box; }
+:where(body) {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--text-body);
+  background: var(--surface-page);
+  -webkit-font-smoothing: antialiased;
+}
+:where(h1, h2, h3, h4) {
+  font-family: var(--font-display);
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-snug);
+}
+:where(a) { color: inherit; }
+:where(:focus-visible) { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+
+/* Context switches also repaint the container they sit on */
+.fei-paper, [data-surface='paper'],
+.fei-kampagne, [data-surface='kampagne'] {
+  background: var(--surface-page);
+  color: var(--text-body);
+}

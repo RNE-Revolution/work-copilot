@@ -1,0 +1,54 @@
+<!-- @dsCard group="Colors" viewport="940x380" name="Surface Rule — Web vs. Dokument" subtitle="Web: weiß + soft shadow · farbige Feature-Cards sparsam · Cream nur für Dokumente" -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin:0; font-family:var(--font-body); background:var(--surface-page); color:var(--text-body); padding:22px; }
+  .wrap { display:grid; grid-template-columns:1.7fr 1fr; gap:18px; align-items:stretch; }
+  .panel { border-radius:var(--radius-lg); padding:18px; }
+  .head { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.1em; margin:0 0 14px; }
+  .row { display:flex; gap:12px; }
+  .mini { flex:1; border-radius:var(--radius-md); padding:13px; min-height:96px; display:flex; flex-direction:column; justify-content:space-between; }
+  .mini .t { font-family:var(--font-display); font-weight:700; font-size:15px; line-height:1.1; }
+  .mini .s { font-size:10.5px; opacity:.8; }
+  .cap { font-size:11.5px; color:var(--text-muted); margin:13px 0 0; line-height:1.45; }
+  .dot { width:7px; height:7px; border-radius:50%; display:inline-block; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- WEB -->
+    <div class="panel" style="background:var(--surface-sunken); border:1px solid var(--border-default)">
+      <p class="head" style="color:var(--action-primary)"><span class="dot" style="background:var(--action-primary)"></span>&nbsp; Web — Default</p>
+      <div class="row">
+        <div class="mini" style="background:var(--surface-card); box-shadow:var(--shadow-card)">
+          <span class="t">Card</span>
+          <span class="s">weiß + soft shadow</span>
+        </div>
+        <div class="mini" style="background:var(--surface-feature); color:#fff">
+          <span class="t">Feature</span>
+          <span class="s">brand-grün · weißer Text</span>
+        </div>
+        <div class="mini" style="background:var(--surface-feature-gradient); color:#fff">
+          <span class="t">Feature-Deep</span>
+          <span class="s">grün → navy</span>
+        </div>
+      </div>
+      <p class="cap">Weiße Cards mit soften Shadows sind der Standard. Farbige Feature-Cards sind ein bewusster Akzent — <strong style="color:var(--text-body)">max. eine pro Card-Gruppe</strong> (die hervorgehobene Option oder ein Editorial-Panel).</p>
+    </div>
+    <!-- DOKUMENT -->
+    <div class="panel" style="background:var(--fei-cream-soft); border:1px solid var(--fei-line)">
+      <p class="head" style="color:var(--text-secondary)"><span class="dot" style="background:var(--fei-cream-deep)"></span>&nbsp; Dokument — .fei-paper</p>
+      <div class="row">
+        <div class="mini" style="background:#fff; box-shadow:var(--shadow-card); flex:none; width:60%">
+          <span class="t">Card</span>
+          <span class="s">weiß auf Cream-Paper</span>
+        </div>
+      </div>
+      <p class="cap">Warmes Cream-Paper nur für <strong style="color:var(--text-body)">Dokumente, Reports & PDF</strong> — per <code>class="fei-paper"</code> aktivieren. Web bleibt weiß.</p>
+    </div>
+  </div>
+</body>
+</html>

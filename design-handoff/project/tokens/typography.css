@@ -1,0 +1,57 @@
+/* ═══════════════════════════════════════════════════════════════
+   fei Bürgerenergie eG — Typography tokens
+   Inter is the single brand typeface (Brandkit 07/2026).
+   Display  = Inter Bold/Black (700–900), often italic, tight leading.
+   Body     = Inter Regular/Medium. Sub-lines & dates = Medium italic.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ─── Families ──────────────────────────────────────────── */
+  --font-display: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body:    'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* ─── Weights ───────────────────────────────────────────── */
+  --weight-light:   300;
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-semibold:600;
+  --weight-bold:    700;
+  --weight-black:   900; /* hero headlines, big stat numbers */
+
+  /* ─── Display styles (Brandkit) ──────────────────────────
+     Headlines: bold + italic, lowercase-friendly (no ALL CAPS).
+     Bubble copy: bold italic, 90% leading, centred. */
+  --display-style:  italic; /* @kind other */
+  --leading-bubble: 0.9;
+
+  /* ─── Fluid display scale (Inter 700–900) ───────────────── */
+  --text-hero:     clamp(2.8rem, 7vw, 5.5rem);   /* page hero H1 */
+  --text-display:  clamp(2rem, 5vw, 3rem);       /* section H2 */
+  --text-title:    clamp(1.5rem, 3.5vw, 2.25rem);/* card / step H3 */
+  --text-stat:     clamp(1.875rem, 4vw, 3rem);   /* dashboard big number */
+
+  /* ─── Static UI scale (Inter) ───────────────────────────── */
+  --text-2xl:  1.5rem;    /* 24px — sub-headline */
+  --text-xl:   1.25rem;   /* 20px — lead paragraph */
+  --text-lg:   1.125rem;  /* 18px — body large */
+  --text-base: 1rem;      /* 16px — body */
+  --text-sm:   0.875rem;  /* 14px — secondary / button */
+  --text-xs:   0.75rem;   /* 12px — eyebrow / caption */
+
+  /* ─── Line heights ──────────────────────────────────────── */
+  --leading-tight:   1.05; /* hero */
+  --leading-snug:    1.15; /* headlines */
+  --leading-normal:  1.5;  /* UI default */
+  --leading-relaxed: 1.75; /* body copy */
+
+  /* ─── Letter spacing ────────────────────────────────────── */
+  --tracking-eyebrow: 0.1em;  /* UPPERCASE eyebrow labels */
+  --tracking-label:   0.05em;
+  --tracking-tight:   -0.01em;
+  --tracking-display: -0.03em; /* Inter needs tighter tracking at display sizes */
+
+  /* ─── Eyebrow recipe (used everywhere above section titles) ─ */
+  --eyebrow-size: var(--text-sm);
+  --eyebrow-weight: var(--weight-semibold);
+  --eyebrow-transform: uppercase; /* @kind other */
+}

@@ -1,0 +1,143 @@
+/* ═══════════════════════════════════════════════════════════════
+   fei Bürgerenergie eG — Color tokens
+   Editorial cooperative palette: warm cream surfaces, navy/black ink,
+   lila/lavender editorial accent, brand yellow + green.
+   A11y rules are non-negotiable — see semantic aliases below.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ─── Sockel / base palette ─────────────────────────────── */
+  --fei-black:          #111111; /* Schwarz Anker — print ink */
+  --fei-navy:           #0F172A; /* Navy Anker — web ink/anchor */
+  --fei-navy-700:       #1E293B; /* navy raised surface */
+  --fei-navy-900:       #060D1A; /* deepest navy (dashboard bg) */
+
+  --fei-cream-soft:     #faf8f3; /* main surface, card-outer */
+  --fei-cream-mid:      #F5EFE3; /* cards, hover, subtle fills */
+  --fei-cream-deep:     #E1D4B8; /* pressed / border-on-cream */
+
+  --fei-lila:           #565CDE; /* Violett (Brandkit 07/2026) — display accent, arrows, photo tint */
+  --fei-lila-deep:      #4449C4; /* hover / pressed */
+  --fei-lavender:       #C9CBF5; /* soft violet tint — chips, washes, fills */
+  --fei-violet:         var(--fei-lila); /* alias — Brandkit name */
+
+  /* ─── Akzent palette ────────────────────────────────────── */
+  --fei-yellow:         #FFE600; /* Marken-Gelb (= Logo-Blitz, Brandkit 07/2026) — surface, never text */
+  --fei-yellow-deep:    #E0CA00; /* yellow border / pressed */
+  --fei-yellow-soft:    #FFF48F; /* outline-Blitz behind titles */
+  --fei-logo-yellow:    var(--fei-yellow); /* alias — Brandkit name */
+  --fei-green:          #16A34A; /* Marken-Grün — impact accent */
+  --fei-green-700:      #15803D; /* green hover / success */
+  --fei-green-900:      #14532D; /* deep green gradient anchor */
+
+  /* ─── Functional ────────────────────────────────────────── */
+  --fei-success:        #15803D;
+  --fei-warning:        #D97706; /* deliberately NOT brand yellow; also carries form errors */
+
+  /* ─── Neutral support (warm-tinted greys) ───────────────── */
+  --fei-ink-700:        #334155; /* secondary body on light */
+  --fei-ink-500:        #64748B; /* muted / captions */
+  --fei-ink-400:        #94A3B8; /* faint labels on dark */
+  --fei-line:           #E2D9C6; /* hairline on cream */
+  --fei-line-soft:      rgba(17,17,17,0.08);
+  --fei-white:          #FFFFFF;
+
+  /* tints for soft chips / wash backgrounds */
+  --fei-green-wash:     rgba(22,163,74,0.10);
+  --fei-yellow-wash:    rgba(255,230,0,0.18);
+  --fei-lila-wash:      rgba(86,92,222,0.10);
+  --fei-lavender-wash:  rgba(201,203,245,0.30);
+
+  /* ═══ SEMANTIC ALIASES — use these in components ═══════════ */
+
+  /* Surfaces ────────────────────────────────────────────────
+     WEB (default): white pages & cards, depth via soft shadow — no cream.
+     Cream is the DOCUMENT / print paper, opt-in via .fei-paper (end of file). */
+  --surface-page:       var(--fei-white);    /* page / app background */
+  --surface-sunken:     #F5F6F7;             /* faint cool canvas behind white cards */
+  --surface-card:       var(--fei-white);    /* default card — white + --shadow-card */
+  --surface-card-soft:  #F5F6F7;             /* subtle fill / hover / icon tile on white */
+  --surface-inverse:    var(--fei-navy);
+  --surface-inverse-deep: var(--fei-navy-900);
+
+  /* Feature surfaces — COLORED cards, used sparingly (max one per card group).
+     Carry white text. For the highlighted option in a row, or editorial panels. */
+  --surface-feature:          var(--fei-green); /* solid brand-green panel */
+  --surface-feature-gradient: linear-gradient(157deg, var(--fei-green-900) 0%, var(--fei-navy) 100%); /* premium dark card */
+  --surface-feature-soft:     var(--fei-green-wash); /* tinted green wash on white */
+
+  /* Text — RULE 1: body is ALWAYS navy (web) or black (print). */
+  --text-body:          var(--fei-navy);
+  --text-secondary:     var(--fei-ink-700);
+  --text-muted:         var(--fei-ink-500);
+  --text-on-inverse:    var(--fei-cream-soft);
+  --text-on-inverse-muted: var(--fei-ink-400);
+  --text-on-yellow:     var(--fei-black); /* RULE 2: yellow carries black text */
+  --text-on-green:      var(--fei-white);
+  --text-link:          var(--fei-green-700);
+
+  /* Display figures — big Inter-900 numbers & section indices.
+     GREEN on light surfaces; use YELLOW when they sit on green/navy. */
+  --accent-display:     var(--fei-green);
+  --accent-display-hover: var(--fei-green-700);
+  --accent-display-soft: var(--fei-green-wash);
+
+  /* Highlight — RULE 3: lila, reserved for review/testimonial names and
+     active form-field focus/borders. Sparingly, never running text. */
+  --accent-highlight:      var(--fei-lila);
+  --accent-highlight-hover: var(--fei-lila-deep);
+  --accent-highlight-soft:  var(--fei-lavender);
+
+  /* Brand actions */
+  --action-primary:     var(--fei-green);
+  --action-primary-hover: var(--fei-green-700);
+  --action-highlight:   var(--fei-yellow); /* CTA fill w/ black text */
+
+  /* Lines & borders */
+  --border-default:     var(--fei-line);
+  --border-strong:      var(--fei-navy);
+
+  /* Focus ring — lila marks active form fields (RULE 3 highlight role) */
+  --focus-ring:         var(--fei-lila);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   DOCUMENT / PRINT context — warm cream paper (opt-in)
+   The web stays WHITE by default. For documents, reports & PDFs add
+   class "fei-paper" (or data-surface="paper") to <body> or a container
+   to restore the warm cream surfaces. Cards stay white so they lift off
+   the cream paper, exactly like the original editorial system.
+   ═══════════════════════════════════════════════════════════════ */
+.fei-paper,
+[data-surface="paper"] {
+  --surface-page:      var(--fei-cream-soft);
+  --surface-sunken:    var(--fei-cream-mid);
+  --surface-card:      var(--fei-white);
+  --surface-card-soft: var(--fei-cream-mid);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   KAMPAGNE context — Plakat, Flyer, Social (Brandkit 07/2026)
+   Full-bleed colour grounds, coloured italic titles, arrows, Blitz,
+   bubbles and the violet photo bubble. NOT for the website — the web
+   keeps white surfaces, navy headlines and photo scrims.
+   Opt in with class "fei-kampagne" (or data-surface="kampagne").
+   Pick the ground with data-ground="gelb|violett|gruen|schwarz".
+   ═══════════════════════════════════════════════════════════════ */
+.fei-kampagne,
+[data-surface="kampagne"] {
+  --surface-page:      var(--fei-cream-soft);   /* default ground: warm cream */
+  --surface-card:      var(--fei-white);
+  --text-body:         var(--fei-black);        /* body stays black */
+  --text-title:        var(--fei-green);        /* title colour: green or violet */
+  --text-title-alt:    var(--fei-lila);
+  --text-subline:      var(--fei-lila);         /* subline & date: a DIFFERENT colour than the title */
+  --bubble-fill:       var(--fei-yellow);       /* Aufruf/Info bubble, black text */
+  --bubble-text:       var(--fei-black);
+  --photo-tint:        var(--fei-lila);         /* Foto-Bubble screen tint */
+  --blitz-stroke:      var(--fei-yellow-soft);  /* outline bolt behind title */
+}
+.fei-kampagne[data-ground="gelb"]    { --surface-page: var(--fei-yellow);  --text-title: var(--fei-black); --text-subline: var(--fei-lila);  --bubble-fill: var(--fei-lila);  --bubble-text: var(--fei-cream-soft); --blitz-stroke: var(--fei-white); }
+.fei-kampagne[data-ground="violett"] { --surface-page: var(--fei-lila);    --text-title: var(--fei-yellow); --text-body: var(--fei-cream-soft); --text-subline: var(--fei-cream-soft); --bubble-fill: var(--fei-yellow); --bubble-text: var(--fei-black); --blitz-stroke: var(--fei-lavender); --photo-tint: var(--fei-green); }
+.fei-kampagne[data-ground="gruen"]   { --surface-page: var(--fei-green);   --text-title: var(--fei-black); --text-body: var(--fei-white); --text-subline: var(--fei-white); --bubble-fill: var(--fei-yellow); --bubble-text: var(--fei-black); --blitz-stroke: rgba(255,255,255,.55); --photo-tint: var(--fei-lila); }
+.fei-kampagne[data-ground="schwarz"] { --surface-page: var(--fei-black);   --text-title: var(--fei-yellow); --text-body: var(--fei-cream-soft); --text-subline: var(--fei-lila); --bubble-fill: var(--fei-yellow); --bubble-text: var(--fei-black); --blitz-stroke: var(--fei-yellow-soft); }

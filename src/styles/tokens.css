@@ -1,0 +1,6 @@
+/* fei Bürgerenergie eG — tokens only (no component classes).
+   Link this if you only need the custom properties. */
+@import './tokens/fonts.css';
+@import './tokens/colors.css';
+@import './tokens/typography.css';
+@import './tokens/spacing.css';
