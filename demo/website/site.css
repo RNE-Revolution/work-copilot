@@ -61,17 +61,16 @@
 .site-steps { display: flex; flex-direction: column; gap: var(--space-5); list-style: none; padding: 0; margin: 0; }
 .site-step { display: grid; grid-template-columns: 1fr; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-sticky); min-height: 280px; background: var(--fei-white); }
 .site-step--img { grid-template-columns: 1.1fr 0.9fr; }
-.site-step--dark { background: linear-gradient(135deg, var(--fei-green-900), var(--fei-navy)); }
-.site-step--result { background: linear-gradient(135deg, var(--fei-green), var(--fei-green-700)); }
+.site-step--result { background: var(--surface-feature); }
 .site-step__text { padding: 2.75rem 2.5rem; display: flex; flex-direction: column; justify-content: center; }
 .site-step__head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 14px; }
 .site-step__n { font-family: var(--font-display); font-weight: var(--weight-black); font-size: 44px; line-height: 1; color: var(--accent-display); }
 .site-step h3 { font-family: var(--font-display); font-weight: var(--weight-black); font-size: var(--text-title); line-height: var(--leading-snug); margin: 0 0 0.75rem; color: var(--text-body); }
 .site-step p { font-size: var(--text-lg); line-height: 1.7; margin: 0; color: var(--text-secondary); }
-.site-step--dark .site-step__n, .site-step--result .site-step__n { color: var(--fei-yellow); }
-.site-step--dark h3, .site-step--result h3 { color: var(--fei-white); }
-.site-step--dark p, .site-step--result p { color: rgba(255,255,255,0.85); }
-/* Rule 4: no lila on green — the result step keeps yellow for its accent */
+.site-step--result .site-step__n { color: var(--fei-yellow); }
+.site-step--result h3 { color: var(--fei-white); }
+.site-step--result p { color: rgba(255,255,255,0.85); }
+/* accents on the dark feature card are yellow (never lila) */
 .site-step--result .fei-tag--solid { background: var(--fei-yellow); color: var(--text-on-yellow); }
 .site-step__img { position: relative; overflow: hidden; }
 .site-step__img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform var(--dur-slow) var(--ease-out); }

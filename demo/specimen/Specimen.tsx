@@ -171,7 +171,7 @@ export function Specimen() {
         <div className="sp-canvas sp-grid-3">
           <ServiceCard icon="home" title="Mieterstrom" href="#">Solarstrom direkt zu den Mietern — ohne Netzgebühren.</ServiceCard>
           <ServiceCard icon="solar-panel" title="GGV" surface="feature" href="#">Eine Anlage, viele Wohneinheiten — virtuell aufgeteilt.</ServiceCard>
-          <ServiceCard icon="bicycle" title="Balkonkraftwerke" accent="yellow" href="#">Plug-and-Play-Solar, ganz ohne eigenes Dach.</ServiceCard>
+          <ServiceCard icon="bicycle" title="Balkonkraftwerke" href="#">Plug-and-Play-Solar, ganz ohne eigenes Dach.</ServiceCard>
         </div>
 
         <Label>Card</Label>

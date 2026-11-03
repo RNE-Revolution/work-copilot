@@ -149,7 +149,6 @@
 a.fei-service-card { cursor: pointer; }
 .fei-service-card:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; }
 .fei-service-card:hover { transform: var(--hover-lift) scale(1.01); border-color: var(--fei-green); box-shadow: var(--shadow-green); }
-.fei-service-card--accent-yellow { --sc-cta: var(--fei-yellow-deep); }
 
 .fei-service-card--feature {
   background: var(--surface-feature);

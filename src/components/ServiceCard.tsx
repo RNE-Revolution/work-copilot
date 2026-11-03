@@ -3,7 +3,6 @@ import { BrandIcon, type BrandIconName } from './BrandIcon';
 import { ArrowRightIcon } from './icons';
 import { cx } from './cx';
 
-export type ServiceAccent = 'green' | 'yellow';
 export type ServiceSurface = 'plain' | 'feature';
 
 export interface ServiceCardProps extends Omit<HTMLAttributes<HTMLElement>, 'title'> {
@@ -18,8 +17,6 @@ export interface ServiceCardProps extends Omit<HTMLAttributes<HTMLElement>, 'tit
   cta?: string;
   /** Renders the card as an <a>. */
   href?: string;
-  /** CTA link colour on plain cards (feature cards always use yellow). */
-  accent?: ServiceAccent;
   /**
    * plain (white + soft shadow, default) · feature (green→navy gradient, white text).
    * Use the feature surface for at most ONE card per group.
@@ -29,7 +26,10 @@ export interface ServiceCardProps extends Omit<HTMLAttributes<HTMLElement>, 'tit
   headingLevel?: 2 | 3 | 4;
 }
 
-/** Offering tile — icon, title, description, "Mehr erfahren →". Lifts + green border on hover. */
+/**
+ * Offering tile — icon, title, description, "Mehr erfahren →". Lifts + green border on hover.
+ * The CTA link is green on plain cards and yellow on the feature card (yellow is never text on white).
+ */
 export function ServiceCard({
   icon,
   iconBase,
@@ -37,7 +37,6 @@ export function ServiceCard({
   children,
   cta = 'Mehr erfahren',
   href,
-  accent = 'green',
   surface = 'plain',
   headingLevel = 3,
   className,
@@ -54,7 +53,6 @@ export function ServiceCard({
       className={cx(
         'fei-service-card',
         surface !== 'plain' && `fei-service-card--${surface}`,
-        accent === 'yellow' && 'fei-service-card--accent-yellow',
         className,
       )}
       {...rest}

@@ -22,7 +22,7 @@ export type { InputProps } from './components/Input';
 export { Logo } from './components/Logo';
 export type { LogoProps, LogoVariant } from './components/Logo';
 export { ServiceCard } from './components/ServiceCard';
-export type { ServiceCardProps, ServiceAccent, ServiceSurface } from './components/ServiceCard';
+export type { ServiceCardProps, ServiceSurface } from './components/ServiceCard';
 export { StatBlock } from './components/StatBlock';
 export type { StatBlockProps, StatAccent } from './components/StatBlock';
 export { Tag } from './components/Tag';
