@@ -4,7 +4,7 @@ import { ArrowRightIcon } from './icons';
 import { cx } from './cx';
 
 export type ServiceAccent = 'green' | 'yellow';
-export type ServiceSurface = 'plain' | 'feature' | 'feature-deep';
+export type ServiceSurface = 'plain' | 'feature';
 
 export interface ServiceCardProps extends Omit<HTMLAttributes<HTMLElement>, 'title'> {
   /** A BrandIcon name or any React node for the icon slot. */
@@ -18,11 +18,11 @@ export interface ServiceCardProps extends Omit<HTMLAttributes<HTMLElement>, 'tit
   cta?: string;
   /** Renders the card as an <a>. */
   href?: string;
-  /** CTA link colour on plain cards. */
+  /** CTA link colour on plain cards (feature cards always use yellow). */
   accent?: ServiceAccent;
   /**
-   * plain (white + soft shadow, default) · feature (solid green) · feature-deep (green→navy).
-   * Colored surfaces carry white text — use at most ONE per card group.
+   * plain (white + soft shadow, default) · feature (green→navy gradient, white text).
+   * Use the feature surface for at most ONE card per group.
    */
   surface?: ServiceSurface;
   /** Heading level of the title. Default 3. */

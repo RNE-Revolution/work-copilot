@@ -111,13 +111,11 @@
 }
 .fei-card--soft     { background: var(--surface-card-soft); }
 .fei-card--navy     { background: var(--surface-inverse); color: var(--text-on-inverse); border-color: rgba(255, 255, 255, 0.08); box-shadow: none; }
-.fei-card--green    { background: var(--surface-feature); color: var(--fei-white); border-color: transparent; box-shadow: var(--shadow-sticky); }
-.fei-card--gradient { background: var(--surface-feature-gradient); color: var(--fei-white); border-color: transparent; box-shadow: var(--shadow-sticky); }
+.fei-card--feature  { background: var(--surface-feature); color: var(--fei-white); border-color: transparent; box-shadow: var(--shadow-sticky); }
 .fei-card--interactive { cursor: pointer; }
 .fei-card--interactive:hover { transform: var(--hover-lift) scale(1.01); box-shadow: var(--shadow-green); border-color: var(--fei-green); }
 .fei-card--interactive.fei-card--navy:hover,
-.fei-card--interactive.fei-card--green:hover,
-.fei-card--interactive.fei-card--gradient:hover { border-color: transparent; box-shadow: var(--shadow-sticky); }
+.fei-card--interactive.fei-card--feature:hover { border-color: transparent; box-shadow: var(--shadow-sticky); }
 
 /* ─── BrandIcon ─────────────────────────────────────────────── */
 .fei-brandicon { display: block; object-fit: contain; }
@@ -153,14 +151,15 @@ a.fei-service-card { cursor: pointer; }
 .fei-service-card:hover { transform: var(--hover-lift) scale(1.01); border-color: var(--fei-green); box-shadow: var(--shadow-green); }
 .fei-service-card--accent-yellow { --sc-cta: var(--fei-yellow-deep); }
 
-.fei-service-card--feature { background: var(--surface-feature); border-color: transparent; box-shadow: var(--shadow-cta); }
-.fei-service-card--feature-deep { background: var(--surface-feature-gradient); border-color: transparent; box-shadow: var(--shadow-sticky); }
-.fei-service-card--feature,
-.fei-service-card--feature-deep { --sc-title: var(--fei-white); --sc-cta: var(--fei-white); }
-.fei-service-card--feature { --sc-body: rgba(255, 255, 255, 0.86); }
-.fei-service-card--feature-deep { --sc-body: rgba(255, 255, 255, 0.8); }
-.fei-service-card--feature:hover,
-.fei-service-card--feature-deep:hover { border-color: transparent; box-shadow: var(--shadow-sticky); }
+.fei-service-card--feature {
+  background: var(--surface-feature);
+  border-color: transparent;
+  box-shadow: var(--shadow-sticky);
+  --sc-title: var(--fei-white);
+  --sc-body: rgba(255, 255, 255, 0.82);
+  --sc-cta: var(--fei-yellow); /* accent on the dark card: yellow, never lila */
+}
+.fei-service-card--feature:hover { border-color: transparent; box-shadow: var(--shadow-sticky); }
 
 .fei-service-card__icon { margin-bottom: var(--space-4); }
 .fei-service-card__title {

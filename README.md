@@ -72,12 +72,7 @@ SKILL.md             Agent-Skill-Einstieg für künftige Claude-Sessions
    `Eyebrow`, `ServiceCard` bieten kein Lila an. Display-Zahlen: grün auf Weiß, gelb auf Grün/Navy.
 4. Nie Violett auf Grün.
 5. Funktionalfarben nur Success (Grün) und Warning (Orange, trägt auch Formularfehler).
-6. Max. eine farbige Feature-Card pro Gruppe.
+6. Max. eine farbige Feature-Card pro Gruppe — immer im Grün→Navy-Verlauf (`surface="feature"`,
+   `<Card tone="feature">`). Vollgrün ist keine Card-Fläche: Weiß auf Grün hat nur 3,30:1.
 
 Bewegung respektiert `prefers-reduced-motion`; Fokus ist überall sichtbar (Violett-Ring).
-
-## Offener Punkt
-
-Weiß auf Marken-Grün hat nur **3,30:1** (WCAG AA nur für großen/fetten Text). Grüne Feature-Cards
-(`surface="feature"`, `<Card tone="green">`) daher nicht mit kleinem Fließtext füllen — oder
-`feature-deep` (Grün→Navy) nutzen. Siehe `docs/surfaces.md`.

@@ -72,8 +72,8 @@ describe('assets', () => {
 
 describe('surfaces & accents', () => {
   it('ServiceCard maps surface and renders as link', () => {
-    render(<ServiceCard title="GGV" surface="feature-deep" href="#">Text</ServiceCard>);
-    expect(screen.getByRole('link').className).toContain('fei-service-card--feature-deep');
+    render(<ServiceCard title="GGV" surface="feature" href="#">Text</ServiceCard>);
+    expect(screen.getByRole('link').className).toContain('fei-service-card--feature');
     expect(screen.getByRole('heading', { level: 3, name: 'GGV' })).toBeTruthy();
   });
   it('StatBlock defaults to the green display accent', () => {
@@ -81,8 +81,8 @@ describe('surfaces & accents', () => {
     expect(container.firstElementChild!.className).toBe('fei-stat');
   });
   it('Card and Badge tones become classes', () => {
-    const { container } = render(<><Card tone="green" interactive>x</Card><Badge tone="warning" dot>!</Badge></>);
-    expect(container.querySelector('.fei-card--green.fei-card--interactive')).toBeTruthy();
+    const { container } = render(<><Card tone="feature" interactive>x</Card><Badge tone="warning" dot>!</Badge></>);
+    expect(container.querySelector('.fei-card--feature.fei-card--interactive')).toBeTruthy();
     expect(container.querySelector('.fei-badge--warning .fei-badge__dot')).toBeTruthy();
   });
   it('Kampagne sets data-ground (none for cream)', () => {

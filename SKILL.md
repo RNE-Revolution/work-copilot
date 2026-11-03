@@ -41,7 +41,7 @@ arrows as highlighters, outline Blitz behind the title, Aufruf-Bubble, violet Fo
 bottom corner. Social canvas 1080×1350 (4:5) with the 3:4 grid-crop safe zone. Never mix the two.
 
 **Surfaces:** the web is **white + soft shadow** (no cream). Colored feature cards
-(solid green / green→navy gradient, white text) are a deliberate accent — **max one per
+(always the green→navy gradient, white text) are a deliberate accent — **max one per
 card group**. Warm cream is the document/print context only (`<body class="fei-paper">`).
 See `guidelines/surfaces.md`.
 

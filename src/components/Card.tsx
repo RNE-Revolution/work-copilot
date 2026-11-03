@@ -2,13 +2,12 @@ import type { CSSProperties, ElementType, HTMLAttributes, ReactNode } from 'reac
 import { cx } from './cx';
 
 /**
- * white    — default web card (white + soft shadow)
- * soft     — faint sunken fill (cool grey on web, cream-mid under .fei-paper)
- * navy     — inverse / dark
- * green    — solid feature card, white text   ┐ colored feature surfaces:
- * gradient — green→navy feature card          ┘ max ONE per card group
+ * white   — default web card (white + soft shadow)
+ * soft    — faint sunken fill (cool grey on web, cream-mid under .fei-paper)
+ * navy    — inverse / dark
+ * feature — the colored highlight card: green→navy gradient, white text. Max ONE per card group.
  */
-export type CardTone = 'white' | 'soft' | 'navy' | 'green' | 'gradient';
+export type CardTone = 'white' | 'soft' | 'navy' | 'feature';
 
 export interface CardProps extends HTMLAttributes<HTMLElement> {
   children?: ReactNode;

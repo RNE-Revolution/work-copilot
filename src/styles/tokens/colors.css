@@ -61,10 +61,11 @@
   --surface-inverse:    var(--fei-navy);
   --surface-inverse-deep: var(--fei-navy-900);
 
-  /* Feature surfaces — COLORED cards, used sparingly (max one per card group).
-     Carry white text. For the highlighted option in a row, or editorial panels. */
-  --surface-feature:          var(--fei-green); /* solid brand-green panel */
-  --surface-feature-gradient: linear-gradient(157deg, var(--fei-green-900) 0%, var(--fei-navy) 100%); /* premium dark card */
+  /* Feature surface — the ONE colored card, used sparingly (max one per card group).
+     Always the green→navy gradient: white text on it passes AA at any size.
+     (Solid brand green is not a card fill — white on #16A34A is only 3.30:1.) */
+  --surface-feature-gradient: linear-gradient(157deg, var(--fei-green-900) 0%, var(--fei-navy) 100%);
+  --surface-feature:          var(--surface-feature-gradient);
   --surface-feature-soft:     var(--fei-green-wash); /* tinted green wash on white */
 
   /* Text — RULE 1: body is ALWAYS navy (web) or black (print). */

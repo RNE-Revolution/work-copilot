@@ -116,8 +116,8 @@ never body text below 18pt. Large display figures are **green** (yellow on green
 *surface*, never text: it carries black text (14.90:1) for highlight markers under
 keywords and CTA fills, but must never be set as type on a light surface (1.19:1 —
 forbidden). **Brand green `#16A34A`** is the impact/action accent: primary CTAs,
-project tags, success indicators, eyebrows, and **solid feature-card surfaces** (white
-text). Deep navy (`#060D1A`) and a green→navy gradient drive full-bleed dark panels and
+project tags, success indicators and eyebrows. The one colored **feature card** per group
+uses the green→navy gradient (white text) — solid green is not a card fill (3.30:1). Deep navy (`#060D1A`) and a green→navy gradient drive full-bleed dark panels and
 the "Live Dashboard". The full web-vs-document surface rule lives in
 `docs/surfaces.md`.
 
@@ -142,7 +142,7 @@ Sections breathe — vertical padding `5–6rem`. Generous whitespace; centred s
 intros (eyebrow → headline → lead).
 
 **Backgrounds.** Mostly flat **white**, with a faint cool grey (`#F5F6F7`) for sunken
-sections behind card groups. Colored **feature cards** (solid green or a green→navy
+sections behind card groups. Colored **feature cards** (green→navy
 gradient, white text) add emphasis — sparingly, **max one per card group**. Two photo
 treatments: (1) full-bleed **photography** with a navy/green gradient scrim +
 `mix-blend-mode: luminosity` for hero & community shots; (2) deep-navy data sections
@@ -163,7 +163,7 @@ fully pill (`9999px`), small chips/inputs `0.5–0.75rem`.
 `1rem` (optionally a cool hairline). On hover they **lift** (`translateY(-8px)
 scale(1.01)`), the border turns green, and the shadow deepens to a green-tinted
 `--shadow-green`. A group may include **one** colored feature card
-(`surface="feature" | "feature-deep"`, white text). In the document context
+(`surface="feature"` / `<Card tone="feature">` — green→navy gradient, white text). In the document context
 (`.fei-paper`) cards stay white on cream paper. "Sticky stacking" cards (the process
 walkthrough) pin with increasing `top` offsets and z-index so they overlap as you scroll.
 

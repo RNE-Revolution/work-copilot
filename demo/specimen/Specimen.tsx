@@ -170,14 +170,14 @@ export function Specimen() {
         <Label>ServiceCard — max. eine farbige Card pro Gruppe</Label>
         <div className="sp-canvas sp-grid-3">
           <ServiceCard icon="home" title="Mieterstrom" href="#">Solarstrom direkt zu den Mietern — ohne Netzgebühren.</ServiceCard>
-          <ServiceCard icon="solar-panel" title="GGV" surface="feature-deep" href="#">Eine Anlage, viele Wohneinheiten — virtuell aufgeteilt.</ServiceCard>
+          <ServiceCard icon="solar-panel" title="GGV" surface="feature" href="#">Eine Anlage, viele Wohneinheiten — virtuell aufgeteilt.</ServiceCard>
           <ServiceCard icon="bicycle" title="Balkonkraftwerke" accent="yellow" href="#">Plug-and-Play-Solar, ganz ohne eigenes Dach.</ServiceCard>
         </div>
 
         <Label>Card</Label>
         <div className="sp-canvas sp-grid-3">
           <Card interactive><b>white</b><p style={{ margin: '6px 0 0', color: 'var(--text-secondary)' }}>Default, mit Hover-Lift.</p></Card>
-          <Card tone="green"><b>green</b><p style={{ margin: '6px 0 0', opacity: .86 }}>Feature-Fläche.</p></Card>
+          <Card tone="feature"><b>feature</b><p style={{ margin: '6px 0 0', opacity: .82 }}>Grün→Navy, die eine farbige Card.</p></Card>
           <Card tone="navy"><b>navy</b><p style={{ margin: '6px 0 0', color: 'var(--text-on-inverse-muted)' }}>Invers.</p></Card>
         </div>
 

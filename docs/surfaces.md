@@ -26,15 +26,18 @@ green / yellow / lila as the only colours on the page.
 Colour on a card surface is a deliberate accent, never the default. Use it to
 **highlight one option** in a group or for an **editorial result panel**.
 
-- `--surface-feature` — solid brand green, white text. (`<ServiceCard surface="feature">`, `<Card tone="green">`)
-- `--surface-feature-gradient` — green→navy gradient, premium dark card. (`surface="feature-deep"`, `<Card tone="gradient">`)
+- `--surface-feature` — the green→navy gradient (`--surface-feature-gradient`), white text.
+  (`<ServiceCard surface="feature">`, `<Card tone="feature">`)
 - `--surface-feature-soft` — a green wash on white, for the quietest emphasis.
+
+**Solid brand green is not a card fill.** White on `#16A34A` is only 3.30:1 (AA Large only),
+so cards with running text always use the gradient. Solid green stays for buttons, tags and
+small bold labels.
 
 **The rule: at most one colored card per card group.** In a 3-up, the middle/
 recommended option is the feature card; the rest stay white. Feature cards carry
-white text and follow the A11y rules (white on the dark gradient ≫ AA; white on solid
-green is only 3.30:1 — AA Large, so keep text on `surface="feature"` ≥ 18pt or 14pt bold,
-or prefer `feature-deep` for cards with running text). Stat figures on a feature card use `<StatBlock onDark>`.
+white text (white on the dark gradient passes AA at any size); their CTA link is yellow.
+Stat figures on a feature card use `<StatBlock accent="yellow" onDark>`.
 
 Do **not** tint every card, and do not stack two feature cards side by side —
 that is the “überladen” look this rule exists to prevent.
